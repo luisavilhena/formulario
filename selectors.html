@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title data-custom-property="custom value">JS Selectors</title>
+</head>
+<body>
+
+  <button id="z">Z</button>
+
+  <div id="container">
+    <button id="button-a">A</button>
+    <button id="button-b">B</button>
+    <button id="button-c">C</button>
+  </div>
+
+  <button id="button-d">D</button>
+
+  <script type="text/javascript">
+    // getElementById
+    var container = document.getElementById('container')
+
+    console.log(container.allButtons)
+
+    // querySelector
+    var firstButton = document.querySelector('button')
+
+    // querySelectorAll
+    var allButtons = document.querySelectorAll('button')
+
+    // select html tag
+    var htmlElement = document.querySelector('html')
+
+    // select head tag
+    var headElement = document.querySelector('head')
+
+    // select title tag
+    var titleElement = document.querySelector('title')
+
+    // select buttons within container
+    var buttonsInsideContainer = document.querySelectorAll("#container > button")
+    var firstButtonInsideContainer = container.querySelector('button')
+    buttonsInsideContainer = container.querySelectorAll('button')
+  </script>
+</body>
+</html>

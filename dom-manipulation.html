@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title data-custom-property="custom value">JS Selectors</title>
+
+  <style type="text/css">
+    body {
+      transition: background-color cubic-bezier(.04,1.77,.7,.72) 1s;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="buttons-container">
+    <button id="button-a" data-color="red">A</button>
+    <button id="button-b" data-color="green">B</button>
+    <button id="button-c" data-color="skyblue">C</button>
+  </div>
+
+  <div style="display: flex">
+    <ul id="clicks-container-1"></ul>
+    <ul id="clicks-container-2"></ul>
+  </div>
+
+  <script type="text/javascript">
+    var body = document.querySelector('body')
+
+    // getElementById
+    var buttonsContainer = document.getElementById('buttons-container')
+    var clicksContainer1 = document.getElementById('clicks-container-1')
+    var clicksContainer2 = document.getElementById('clicks-container-2')
+
+    buttonsContainer.addEventListener('click', function (event) {
+      var button = event.target
+      var buttonId = button.getAttribute('id')
+
+      var liElement1 = document.createElement('li')
+      liElement1.innerHTML = 'clicked ' + buttonId
+
+      var liElement2 = document.createElement('li')
+      liElement2.innerHTML = 'clicked ' + buttonId
+
+      clicksContainer1.prepend(liElement1)
+      clicksContainer2.appendChild(liElement2)
+      
+    })
+
+    body.addEventListener('mousemove', function (event) {
+      var target = event.target
+      var color = target.getAttribute('data-color')
+
+      if (color) {
+        // body.setAttribute('style', 'background-color: ' + color)
+        body.style.backgroundColor = color
+      }
+    })
+
+  </script>
+</body>
+</html>

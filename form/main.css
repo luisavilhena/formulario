@@ -1,0 +1,26 @@
+#container {
+  display: flex;
+  justify-content: space-around;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  border-color: skyblue;
+}
+
+h3 {
+  color: blue;
+}
+
+h1 {
+  color: skyblue;
+}
+
+input {
+  width: 100%;
+}
+
+button { 
+  margin: 20px auto;
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+<body>
+
+  <button id="z">Z</button>
+
+  <div id="container">
+    <button id="button-a">A</button>
+    <button id="button-b">B</button>
+    <button id="button-c"><span>C</span></button>
+  </div>
+
+  <button id="button-d">D</button>
+
+  <script type="text/javascript">
+    var body = document.querySelector('body')
+    var container = document.getElementById('container')
+    var buttonA = document.getElementById('button-a')
+    var buttonB = document.getElementById('button-b')
+    var allButtons = Array.from(document.querySelectorAll('button'))
+
+    // allButtons.forEach(function (button) {
+    //   button.addEventListener('click', function (event) {
+    //     console.log('clicked button ' + button.getAttribute('id'))
+    //   })
+    // })
+
+    // buttonA.addEventListener('click', function (event) {
+    //   console.log('clicked buttonA', event.target)
+
+    // })
+
+    buttonB.addEventListener('click', function (event) {
+      console.log('clicked buttonB', event.target, event.currentTarget)
+    })
+
+    body.addEventListener('click', function (event) {
+      console.log('clicked body', event.target, event.currentTarget)
+    })
+
+    container.addEventListener('click', function (event) {
+      console.log('clicked container at button ', event.target, event.currentTarget)
+    })
+
+
+    var buttonW = document.createElement('button')
+    buttonW.setAttribute('id', 'button-w')
+    buttonW.innerText = 'W'
+
+    container.appendChild(buttonW)
+
+
+  </script>
+</body>
+</html>
